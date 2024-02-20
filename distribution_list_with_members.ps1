@@ -1,4 +1,3 @@
-EXPORT ALL DISTRIBUTION LIST GROUP AND THEIR CORRESPONDING MEMBERS:
 # Connect to Exchange Online
 Connect-ExchangeOnline -UserPrincipalName [ENTER ADMIN UPN HERE] -ShowProgress $true
 
