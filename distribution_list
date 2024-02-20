@@ -1,0 +1,14 @@
+# Connect to Exchange Online PowerShell
+# Uncomment the next line if you haven't already connected in your session
+Connect-ExchangeOnline -UserPrincipalName <YourAdminAccount>@<YourDomain>.com
+
+# Specify the output CSV file path
+$csvFilePath = "ENTER FILE PATH/FILE NAME"
+
+# Retrieve all distribution groups and select their display name and primary email address
+$groups = Get-DistributionGroup | Select-Object DisplayName,PrimarySmtpAddress
+
+# Export the results to a CSV file
+$groups | Export-Csv -Path $csvFilePath -NoTypeInformation
+
+Write-Host "Export complete. Distribution list emails saved to: $csvFilePath"
